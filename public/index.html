@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Food</title>
+    <script>
+      window.NODE_ENV = null;
+    </script>
+  </head>
+  <body>
+    <!--
+      Insert these scripts at the bottom of the HTML, but before you use any Firebase services
+    -->
+
+    <!--
+      Firebase App (the core Firebase SDK) is always required and must be listed first
+    -->
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-functions.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+    <script>
+      var firebaseConfig = {
+        apiKey: "AIzaSyDBMv9LCjU8sEHmimK8E4OkVex5oGYFSN4",
+        authDomain: "food-70e24.firebaseapp.com",
+        databaseURL: "https://food-70e24.firebaseio.com",
+        projectId: "food-70e24",
+        storageBucket: "food-70e24.appspot.com",
+        messagingSenderId: "551981409188",
+        appId: "1:551981409188:web:1dc7e175e6398d5a"
+      };
+
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
+
+    category <input type="text" class="inputs" id="category" /> <br />
+    type <input type="text" class="inputs" id="type" /><br />
+    price <input type="text" class="inputs" id="price" <br /> location
+    <input type="text" class="inputs" id="location" /><br />
+    color <input type="text" class="inputs" id="color" /><br />
+    growing method <input type="text" class="inputs" id="growingMethod" /><br />
+    distanceInput <input type="text" class="inputs" id="distance" /><br />
+
+    <button type="button" onClick="makeNewFruitArray()">submit button</button>
+    <script src="fetch.js"></script>
+    <script src="food.js"></script>
+  </body>
+</html>

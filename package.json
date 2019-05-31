@@ -1,0 +1,15 @@
+{
+  "name": "food",
+  "description": "Firebase Food",
+  "scripts": {
+    "serveLocal": "cross-env NODE_ENV=development firebase serve"
+  },
+  "engines": {
+    "node": "8"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "cross-env": "^5.2.0"
+  },
+  "private": true
+}
