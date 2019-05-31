@@ -23,6 +23,10 @@ async function init() {
   var numbers = [1, 2, 3, 4];
   var sum = await addition(numbers);
   console.log(sum);
+
+  var testNumberFoodJS = 3;
+  var testNumberPath = await testNumberFunction(testNumberFoodJS);
+  console.log(testNumberPath);
 }
 
 async function addition(numbers) {
@@ -31,6 +35,15 @@ async function addition(numbers) {
   });
   return additionResult.output;
 }
+
+///
+async function testNumberFunction(testNumberFoodJS) {
+  var insideTestNumberFunction = await fetchUrl("pushNumber", {
+    testNumberSite: testNumberFoodJS
+  });
+  return insideTestNumberFunction.output;
+}
+////
 
 var orange = ["fruit", "orange", ".33", "Florida", "orange"];
 var apple = ["fruit", "apple", ".50", "Kansas", "Red", "organic"];

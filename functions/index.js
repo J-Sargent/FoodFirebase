@@ -58,3 +58,19 @@ exports.helloWorld = functions.https.onRequest((req, res) => {
   console.log("helloWorld powershell");
   res.send({ message: "Hello from Firebase!" });
 });
+
+exports.pushNumber = functions.https.onRequest((req, res) => {
+  console.log("pushNumber called");
+  return cors(req, res, () => {
+    var output = 0;
+    var body = JSON.parse(req.body);
+    var testNumberIndexJS = body.testNumberSite;
+    var testNumberRef = admin.database().ref("testNumberDatabase");
+    var newTestNumberRef = testNumberRef.push();
+    newTestNumberRef.set({ value: testNumberIndexJS });
+    var testNumberPath = newTestNumberRef.toString();
+    console.log("firebase testNumberPath: " + testNumberPath);
+    output = testNumberPath;
+    return res.send({ output });
+  });
+});
